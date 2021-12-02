@@ -30,6 +30,5 @@ def saverecords(request):
             cursor=conn.cursor()
             cursor.execute("insert into sttable values ('"+insertstvalues.stname+"','"+insertstvalues.stemail+"','"+insertstvalues.stmob+"')")
             cursor.commit()
-            return render(request,'index.html')
-    else:
-            return render(request,'index.html')
+            order = cursor.fetchval("stname")
+            return render(request,'index.html', {"order": order})

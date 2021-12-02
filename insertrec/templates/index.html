@@ -154,7 +154,7 @@
     </div>
     <div class="flex-child">
 
-        <form method="post">
+        <form method="post" action="/postOrder/">
             {% csrf_token %}
          
          Sub-total      : <input type="text" id="stn" placeholder="name" name="stname" value="0.00" readonly><br>
@@ -166,6 +166,7 @@
          
      </form>
 
+     <p>{{ order }}</p>
                
     </div>
     
